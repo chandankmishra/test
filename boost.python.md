@@ -1,9 +1,9 @@
-#Boost Python
+# Boost Python
 
 Links
 https://www.boost.org/doc/libs/1_67_0/libs/python/doc/html/tutorial/tutorial/exposing.html
 https://www.boost.org/doc/libs/1_42_0/libs/python/doc/v2/reference_existing_object.html
-Example #1
+## Example #1
 Save code with name hello.cpp
    #include <boost/python/module.hpp>  
    #include <boost/python/def.hpp>  
@@ -16,7 +16,7 @@ Save code with name hello.cpp
    BOOST_PYTHON_MODULE(hello) {
          def("hello_world", helloWorld);  
    }
-Run the Program
+ Run the Program
 Code save with name hello.cpp
 Run the program
 g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/python2.7 -L/usr/local/lib  -lboost_python
@@ -25,7 +25,7 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/py
   >>> print libhello.hello_world()
   Hello world!
   0
-Example #2
+## Example #2
 Save code with name hello.cpp
  #include <boost/python/module.hpp>
  #include <boost/python/def.hpp>
@@ -57,7 +57,7 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/py
  >>> planet.set('howdy')
  >>> planet.greet()
 
-Example #3
+## Example #3
 Save code with name hello.h
  #include <iostream>
  struct World
@@ -98,6 +98,6 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp hello_ext.cpp -I/
    >>> planet.greet()
    'howdy'
    
-Pybind11
-Link
-https://pybind11.readthedocs.io/en/master/basics.html#compiling-the-test-cases
+# Pybind11
+* Link
+** https://pybind11.readthedocs.io/en/master/basics.html#compiling-the-test-cases
