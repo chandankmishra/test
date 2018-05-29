@@ -1,6 +1,6 @@
 # Boost Python
 
-Links
+* Links
 https://www.boost.org/doc/libs/1_67_0/libs/python/doc/html/tutorial/tutorial/exposing.html
 https://www.boost.org/doc/libs/1_42_0/libs/python/doc/v2/reference_existing_object.html
 ## Example #1
@@ -49,8 +49,8 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/py
  }
 * Run the Program
 * Code save with name hello.cpp
-Run the program
-g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/python2.7 -L/usr/local/lib -lboost_python
+* Run the program
+ * g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/python2.7 -L/usr/local/lib -lboost_python
  python
  >>> import hello
  >>> planet = hello.World()
@@ -58,7 +58,7 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/py
  >>> planet.greet()
 
 ## Example #3
-Save code with name hello.h
+* Save code with name hello.h
  #include <iostream>
  struct World
  {
@@ -66,7 +66,8 @@ Save code with name hello.h
      std::string greet();
      std::string msg;
  };
-Save code with name hello.cpp
+
+* Save code with name hello.cpp
  #include <iostream>
  #include "hello.h"
  void World::set(std::string msg) {
@@ -75,7 +76,8 @@ Save code with name hello.cpp
  std::string World::greet() {
      return msg;
  }
-Save code with name hello_ext.cpp
+
+* Save code with name hello_ext.cpp
  #include <boost/python/module.hpp>
  #include <boost/python/def.hpp>
  #include <boost/python.hpp>
@@ -89,8 +91,8 @@ Save code with name hello_ext.cpp
          .def("set", &World::set)
          ;
  }
-Compile the code
-g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp hello_ext.cpp -I/usr/include/python2.7 -L/usr/local/lib -lboost_python
+* Compile the code
+ * g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp hello_ext.cpp -I/usr/include/python2.7 -L/usr/local/lib - lboost_python
    python
    >>> import hello 
    >>> planet = hello.World() 
@@ -100,4 +102,4 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp hello_ext.cpp -I/
    
 # Pybind11
 * Link
-** https://pybind11.readthedocs.io/en/master/basics.html#compiling-the-test-cases
+ * https://pybind11.readthedocs.io/en/master/basics.html#compiling-the-test-cases
