@@ -4,7 +4,7 @@ Links
 https://www.boost.org/doc/libs/1_67_0/libs/python/doc/html/tutorial/tutorial/exposing.html
 https://www.boost.org/doc/libs/1_42_0/libs/python/doc/v2/reference_existing_object.html
 ## Example #1
-Save code with name hello.cpp
+* Save code with name hello.cpp
    #include <boost/python/module.hpp>  
    #include <boost/python/def.hpp>  
    using namespace std;  
@@ -16,9 +16,9 @@ Save code with name hello.cpp
    BOOST_PYTHON_MODULE(hello) {
          def("hello_world", helloWorld);  
    }
- Run the Program
-Code save with name hello.cpp
-Run the program
+* Run the Program
+** Save code with name hello.cpp
+* Run the program
 g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/python2.7 -L/usr/local/lib  -lboost_python
   python
   >>> import hello
@@ -26,7 +26,7 @@ g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/py
   Hello world!
   0
 ## Example #2
-Save code with name hello.cpp
+* Save code with name hello.cpp
  #include <boost/python/module.hpp>
  #include <boost/python/def.hpp>
  using namespace std;
@@ -47,8 +47,8 @@ Save code with name hello.cpp
          .def("set", &World::set)
          ;
  }
-Run the Program
-Code save with name hello.cpp
+* Run the Program
+* Code save with name hello.cpp
 Run the program
 g++ -fpic -shared -o hello.so -Wl,-soname,"hello.so" hello.cpp -I/usr/include/python2.7 -L/usr/local/lib -lboost_python
  python
